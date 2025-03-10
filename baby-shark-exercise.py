@@ -31,3 +31,4 @@ for repeat in chorus:
     shark = change_shark(repeat)
     for line in lines:
         print(shark_lines(shark)) if line < 3 else print(f"{shark} Shark")
+
