@@ -3,27 +3,31 @@ Examine the lyrics of the famous song “Baby Shark” if you haven’t heard it
 	1.	Identify patterns and repetitions (if there are any)
 	2.	Use loops and functions to minimize the number of such repetitions
 
-Baby Shark, doo-doo, doo-doo, doo-doo
-Baby Shark, doo-doo, doo-doo, doo-doo
-Baby Shark, doo-doo, doo-doo, doo-doo
-Baby Shark
+chorus repeat 5 times.
+melody repeats 3 times, then one final 'x shark'
 
-Mommy Shark, doo-doo, doo-doo, doo-doo
-Mommy Shark, doo-doo, doo-doo, doo-doo
-Mommy Shark, doo-doo, doo-doo, doo-doo
-Mommy Shark
+baby, mommy, daddy, grandma, grandpa
+"""
 
-Daddy Shark, doo-doo, doo-doo, doo-doo
-Daddy Shark, doo-doo, doo-doo, doo-doo
-Daddy Shark, doo-doo, doo-doo, doo-doo
-Daddy Shark
+chorus = range(5)
+lines = range(4)
 
-Grandma Shark, doo-doo, doo-doo, doo-doo
-Grandma Shark, doo-doo, doo-doo, doo-doo
-Grandma Shark, doo-doo, doo-doo, doo-doo
-Grandma Shark
+for repeat in chorus:
+    def change_shark(repeat):
+        if repeat == 0:
+            return "Baby"
+        if repeat == 1:
+            return "Mommy"
+        if repeat == 2:
+            return "Daddy"
+        if repeat == 3:
+            return "Grandma"
+        if repeat == 4:
+            return "Grandpa"
 
-Grandpa Shark, doo-doo, doo-doo, doo-doo
-Grandpa Shark, doo-doo, doo-doo, doo-doo
-Grandpa Shark, doo-doo, doo-doo, doo-doo
-Grandpa Shark"""
+    def shark_lines(shark):
+        return f"{shark} Shark, doo-doo, doo-doo, doo-doo"
+
+    shark = change_shark(repeat)
+    for line in lines:
+        print(shark_lines(shark)) if line < 3 else print(f"{shark} Shark")
