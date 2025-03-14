@@ -11,23 +11,15 @@ baby, mommy, daddy, grandma, grandpa
 
 chorus = range(5)
 lines = range(4)
+sharks = ["Baby", "Mommy", "Daddy", "Grandma", "Grandpa"]
+
+def change_shark(chorus_number):
+    return sharks[chorus_number]
+
+def shark_lines(shark):
+    return f"{shark} Shark, doo-doo, doo-doo, doo-doo"
 
 for repeat in chorus:
-    def change_shark(repeat):
-        if repeat == 0:
-            return "Baby"
-        if repeat == 1:
-            return "Mommy"
-        if repeat == 2:
-            return "Daddy"
-        if repeat == 3:
-            return "Grandma"
-        if repeat == 4:
-            return "Grandpa"
-
-    def shark_lines(shark):
-        return f"{shark} Shark, doo-doo, doo-doo, doo-doo"
-
     shark = change_shark(repeat)
     for line in lines:
         print(shark_lines(shark)) if line < 3 else print(f"{shark} Shark")
